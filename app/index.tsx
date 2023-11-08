@@ -1,14 +1,29 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import React, { useRef } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber/native'
 
-function TestScreen(): React.JSX.Element {
+function Box() {
+  const refMesh = useRef();
+
+  useFrame(() => {
+    // @ts-ignore
+    refMesh.current.rotation.x += 0.01;
+  });
+
   return (
-    <View>
-      <Text>Home page</Text>
-      <Link href="/page_test">Page test</Link>
-    </View>
+    <mesh ref={refMesh}>
+      <boxGeometry />
+      <meshStandardMaterial />
+    </mesh>
   );
 }
 
-export default TestScreen;
+function HomeScreen(): React.JSX.Element {
+  return (
+    <Canvas>
+      <ambientLight />
+      <Box />
+    </Canvas>
+  )
+}
+
+export default HomeScreen
