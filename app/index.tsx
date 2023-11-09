@@ -1,5 +1,7 @@
-import React, { useRef } from 'react'
+import React, { Suspense, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber/native'
+
+import DefaultCube from './components/DefaultCube'
 
 function Box() {
   const refMesh = useRef();
@@ -18,10 +20,16 @@ function Box() {
 }
 
 function HomeScreen(): React.JSX.Element {
+
+
+
   return (
     <Canvas>
       <ambientLight />
       <Box />
+        <Suspense>
+            <DefaultCube />
+        </Suspense>
     </Canvas>
   )
 }
