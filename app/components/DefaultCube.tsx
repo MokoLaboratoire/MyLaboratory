@@ -1,7 +1,7 @@
 
 
 import {useGLTF} from "@react-three/drei/native";
-import defaultCube from '../assets/glb/default_cube.glb'
+import defaultCube from '../assets/glb/default_cube.gltf'
 
 export default function Model() {
     

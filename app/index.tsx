@@ -27,9 +27,9 @@ function HomeScreen(): React.JSX.Element {
     <Canvas>
       <ambientLight />
       <Box />
-        <Suspense>
-            <DefaultCube />
-        </Suspense>
+      <Suspense>
+        <DefaultCube />
+      </Suspense>
     </Canvas>
   )
 }
