@@ -1,5 +1,9 @@
 module.exports = {
     root: true,
+    env: {
+      "browser": true,
+      "react-native/react-native": true,
+    },
     extends: [
       'universe/native',
       'eslint:recommended', 
@@ -13,8 +17,12 @@ module.exports = {
         'jsx': true
       }
     },
-    plugins: ['react', 'react-hooks'],
+    plugins: [
+      'react', 
+      'react-hooks',
+      'react-native'
+    ],
     rules: {
-      
+
     }
   };
